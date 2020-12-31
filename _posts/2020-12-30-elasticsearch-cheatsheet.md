@@ -8,12 +8,17 @@ cover_url: "/images/jekyll.png"
 
 ## Elasticsearch cheatsheet
 
-Create index
+<details><summary>Create index</summary>
+<div markdown="1">
 ```bash
 PUT /tags
 ```
+</div>
+</details>
 ----
-Create pipeline
+
+<details><summary>Create pipeline</summary>
+<div markdown="1">
 ``` bash
 PUT _ingest/pipeline/indexed_at
 {
@@ -28,16 +33,23 @@ PUT _ingest/pipeline/indexed_at
   ]
 }
 ```
+</div>
+</details>
 ----
-Add pipeline to index
+<details><summary>Add pipeline to index</summary>
+<div markdown="1">
 ``` bash
 PUT /tags/_settings
 {
   "index.default_pipeline": "indexed_at"
 }
 ```
+</div>
+</details>
 ----
-Scrolling API
+
+<details><summary>Scrolling API</summary>
+<div markdown="1">
 ``` bash
 GET /tags/_search?scroll=1m&size=10
 {
@@ -48,3 +60,4 @@ GET /tags/_search?scroll=1m&size=10
     }
 }
 ```
+</div>
